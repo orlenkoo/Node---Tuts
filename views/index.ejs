@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+<body>
+  <%- include('./partials/navBar.ejs') %>
+
+  <main role="main" class="container-fluid">
+    <!-- MAP IMAGE -->
+
+    <div class="circle1">
+      <a href="/precovid" type="button" id="homeButtonOne" class="btn btn-lg dotButtonBeforeClicked1"> Πάρε μέρος στην έρευνα </a>
+    </div>
+    <div class="circle2">
+      <a href="/references" type="button" id="homeButtonTwo" class="btn btn-lg dotButtonBeforeClicked2"> Ενημερώσου! </a>
+    </div>
+  </main>
+  <script src="../javascripts/buttons.js"></script>
+  <%- include("./partials/jsFiles.ejs") %>
+</body>
+
+</html>

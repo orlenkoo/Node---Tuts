@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/navBar.ejs") %>
+  <main role="main" class="container-fluid">
+    <!-- Εξήγηση για τον χρήστη -->
+    <p class="explanation-p">
+      Αυτή η σελίδα αφορά την περίοδο που ήμασταν σε καραντίνα. Απαντήστε στις ερωτήσεις και καταχωρείστε στον χάρτη κάποιες τοποθεσίες
+      σχετικά με το που βγαίνατε ή συχνάζατε περισσότερο κατά την διάρκεια της καραντίνας και επιλέξτε από τις επιλογές που έχει το marker τι είδους μέρος ήταν αυτό
+      (σπίτι ή δημόσιος χώρος).</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <form action="/endofsurvey" method="GET">
+            <div class="modal-content covid-form">
+              <div class="modal-header">
+                <h2>Ερωτήσεις</h2>
+              </div>
+              <!-- Ερωτήσεις -->
+              <div class="modal-body">
+                <!-- Input Type Radio Button -->
+                <div class="custom-control custom-radio question-div">
+                  <label>
+                    Πόσο συχνά επισκεπτόσασταν έναν δημόσιο χώρο κατά την διάρκεια της καραντίνας?
+                  </label><br>
+                  <label for="q1a1">
+                    <input class="custom-control-input" type="radio" id="q1a1" name="question 1"> Κάθε μέρα
+                  </label><br>
+                  <label for="q1a2">
+                    <input class="custom-control-input" type="radio" id="q1a2" name="question 1"> 3-4 φορές την εβδομάδα
+                  </label><br>
+                  <label for="q1a3">
+                    <input class="custom-control-input" type="radio" id="q1a3" name="question 1"> 1 φορά την εβδομάδα
+                  </label><br>
+                  <label for="q1a4">
+                    <input class="custom-control-input" type="radio" id="q1a4" name="question 1"> Λιγότερο από 3 φορές τον μήνα
+                  </label><br>
+                  <label for="q1a5">
+                    <input class="custom-control-input" type="radio" id="q1a5" name="question 1"> Καθόλου ή λιγότερο από 1 φορά το μήνα
+                  </label><br>
+                </div>
+
+                <hr>
+
+                <div class="custom-control custom-radio question-div">
+                  <label>
+                    Τι είδους δημόσιο χώρο επισκεπτόσασταν?
+                  </label><br>
+                  <input class="custom-control-input" type="radio" id="q2a1" name="question 2"> Πλατεία
+                  <label for="q2a1"></label><br>
+                  <label for="q2a2">
+                    <input class="custom-control-input" type="radio" id="q2a2" name="question 2"> Πάρκο
+                  </label><br>
+                  <label for="q2a3">
+                    <input class="custom-control-input" type="radio" id="q2a3" name="question 2"> Πεζόδρομο
+                  </label><br>
+                  <label for="q2a4">
+                    <input class="custom-control-input" type="radio" id="q2a4" name="question 2"> Άλλο
+                  </label><br>
+                  <label for="q2a5">
+                    <input class="custom-control-input" type="radio" id="q2a5" name="question 2"> Άλλο
+                  </label><br>
+                </div>
+
+                <hr>
+
+                <div class="custom-control custom-radio question-div">
+                  <label>
+                    Όταν κλείσανε τα μαγαζιά και βρισκόσασταν με την παρέα σας προτιμούσατε να πηγαίνετε σε
+                  </label><br>
+                  <label for="q3a1">
+                    <input class="custom-control-input" type="radio" id="q3a1" name="question 3"> Πλατεία
+                  </label><br>
+                  <label for="q3a2">
+                    <input class="custom-control-input" type="radio" id="q3a2" name="question 3"> Πάρκο
+                  </label><br>
+                  <label for="q3a3">
+                    <input class="custom-control-input" type="radio" id="q3a3" name="question 3"> Κάποιο σπίτι
+                  </label><br>
+                  <label for="q3a4">
+                    <input class="custom-control-input" type="radio" id="q3a4" name="question 3"> Δεν βρισκομουν με την παρέα μου
+                  </label><br>
+                </div>
+
+                <hr>
+
+                <div class="custom-control custom-radio question-div">
+                  <label>
+                    Ποιος είναι ο λόγος που επισκεπτόσασταν κάποιον δημόσιο χώρο;
+                  </label><br>
+                  <label for="q4a1">
+                    <input class="custom-control-input" type="radio" id="q4a1" name="question 4"> Άθληση
+                  </label><br>
+                  <label for="q4a2">
+                    <input class="custom-control-input" type="radio" id="q4a2" name="question 4"> Συναναστροφή με άλλους ανθρώπους
+                  </label><br>
+                  <label for="q4a3">
+                    <input class="custom-control-input" type="radio" id="q4a3" name="question 4"> Ατομική βόλτα/περπάτημα
+                  </label><br>
+                  <label for="q4a4">
+                    <input class="custom-control-input" type="radio" id="q4a4" name="question 4"> Βόλτα με κατοικίδια
+                  </label><br>
+                  <label for="q4a5">
+                    <input class="custom-control-input" type="radio" id="q4a5" name="question 4"> Βόλτα με την οικογένεια σας
+                  </label><br>
+                  <label for="q4a6">
+                    <input class="custom-control-input" type="radio" id="q4a6" name="question 4"> Βόλτα με τους φίλους σας
+                </div>
+
+                <hr>
+
+                <div class="custom-control custom-radio question-div">
+                  <label>
+                    Ποιος ήταν ο μέσος χρόνος παραμονής σας σε έναν δημόσιο χώρο;
+                  </label><br>
+                  <label for="q5a1">
+                    <input class="custom-control-input" type="radio" id="q5a1" name="question 5"> Κάτω από μισή ώρα
+                  </label><br>
+                  <label for="q5a2">
+                    <input class="custom-control-input" type="radio" id="q5a2" name="question 5"> Μισή με μία ώρα
+                  </label><br>
+                  <label for="q5a3">
+                    <input class="custom-control-input" type="radio" id="q5a3" name="question 5"> Μία με δύο ώρες
+                  </label><br>
+                  <label for="q5a4">
+                    <input class="custom-control-input" type="radio" id="q5a4" name="question 5"> Πάνω από δύο ώρες
+                  </label><br>
+                </div>
+
+                <hr>
+
+                <div class="custom-control custom-radio question-div">
+                  <label>
+                    Ποιο ήταν το μέσο μετακίνησης σας προς τον δημόσιο χώρο;
+                  </label><br>
+                  <label for="q6a1">
+                    <input class="custom-control-input" type="radio" id="q6a1" name="question 6"> Μέσα Μαζικής Μεταφοράς
+                  </label><br>
+                  <label for="q6a2">
+                    <input class="custom-control-input" type="radio" id="q6a2" name="question 6"> Αυτοκίνητο
+                  </label><br>
+                  <label for="q6a3">
+                    <input class="custom-control-input" type="radio" id="q6a3" name="question 6"> Περπάτημα
+                  </label><br>
+                  <label for="q6a4">
+                    <input class="custom-control-input" type="radio" id="q6a4" name="question 6"> Ποδήλατο
+                  </label><br>
+                </div>
+
+                <hr>
+
+                <!-- Input Type Checkbox -->
+                <div class="custom-control question-div">
+                  <label>Για ποιον/ποιους λόγους σας προσέλκυε ο δημόσιος χώρος που επισκεπτόσασταν πιο συχνά;
+                    <small>(Check all that apply)</small>
+                  </label><br>
+                  <label for="inp-1">
+                    <input class="custom-control-input" type="checkbox" name="inp"> Βρίσκεται κοντά στην κατοικία σας</label><br>
+                  <label for="inp-2">
+                    <input class="custom-control-input" type="checkbox" name="inp"> Βρίσκεται σε μέρος που έχει όμορφο τοπίο</label><br>
+                  <label for="inp-3">
+                    <input class="custom-control-input" type="checkbox" name="inp"> Δεν σας αρέσει αλλά τον επισκέπτεστε επειδή συχνάζει εκεί η παρέα σας </label><br>
+                  <label for="inp-4">
+                    <input class="custom-control-input" type="checkbox" name="inp"> Δεν συχνάζει πολύ κόσμος</label><br>
+                  <label for="inp-5">
+                    <input class="custom-control-input" type="checkbox" name="inp"> Συχνάζει πολύ κόσμος</label><br>
+                  <label for="inp-6">
+                    <input class="custom-control-input" type="checkbox" name="inp"> Είναι ωραία διαμορφωμένος</label><br>
+                </div>
+
+                <hr>
+
+                <div class="custom-control custom-radio question-div">
+                  <label>Η απαγόρευση κυκλοφορίας, μετά τις 21,00, επηρέασε τη συχνότητα επίσκεψης των δημόσιων χώρων καθώς και το χρόνο παραμονής σας σε αυτούς;
+                  </label><br>
+                  <label for="q7a1">
+                    <input type="radio" id="q7a1" name="question 7"> Ναι, έχει επηρεάσει την συχνότητα</label><br>
+                  <label for="q7a2">
+                    <input type="radio" id="q7a2" name="question 7"> Ναι, έχει επηρεάσει τον χρόνο παραμονής</label><br>
+                  <label for="q7a3">
+                    <input type="radio" id="q7a3" name="question 7"> Ναι, έχει επηρεάσει και τα δύο παραπάνω </label><br>
+                  <label for="q7a4">
+                    <input type="radio" id="q7a4" name="question 7"> Όχι</label><br>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" id="nextButtonNamePre" class="btn next-button">Next</button>
+            </div>
+        </div>
+        </form>
+
+
+        <div class="col-sm">
+          <div id="map"></div>
+          <script src="javascripts/webmap.js"></script>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <%- include("./partials/jsFiles.ejs") %>
+</body>
+
+</html>
